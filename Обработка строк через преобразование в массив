@@ -1,0 +1,22 @@
+const censore = (word, array) => {
+  for (const item of array) {
+    if (item === word) {
+      word = '$#%!';
+    }
+  }
+  return word;
+};
+
+const makeCensored = (text, array) => {
+  const separator = ' ';
+  const words = text.split(separator);
+
+  const mass = [];
+  for (const word of words) {
+    mass.push(censore(word, array));
+  }
+
+  return mass.join(separator);
+};
+
+export default makeCensored;
