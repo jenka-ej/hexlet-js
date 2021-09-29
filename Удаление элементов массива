@@ -1,0 +1,21 @@
+const getSameParity = (array) => {
+  const result = [];
+
+  if (array[0] % 2 === 0) {
+    for (const item of array) {
+      if (item % 2 === 0) {
+        result.push(item);
+      }
+    }
+  } else {
+    for (const item of array) {
+      if (item % 2 !== 0) {
+        result.push(item);
+      }
+    }
+  }
+  
+  return result;
+};
+
+export default getSameParity;
