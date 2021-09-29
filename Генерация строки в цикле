@@ -1,0 +1,17 @@
+const buildDefinitionList = (array) => {
+  if (array.length === 0) {
+    return "";
+  }
+
+  const mass = [];
+
+  for (const item of array) {
+    mass.push(`<dt>${item[0]}</dt><dd>${item[1]}</dd>`);
+  }
+
+  const innerValue = mass.join('');
+  const result = `<dl>${innerValue}</dl>`;
+  return result;
+};
+
+export default buildDefinitionList;
