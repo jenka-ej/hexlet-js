@@ -1,0 +1,27 @@
+const getTotalAmount = (array, str) => {
+  let sum = 0;
+
+  if (str === 'usd') {
+    for (const item of array) {
+      if (item.slice(0, 3) === 'usd') {
+        sum += Number(item.slice(4));
+      }
+    }
+  } else if (str === 'eur') {
+    for (const item of array) {
+      if (item.slice(0, 3) === 'eur') {
+        sum += Number(item.slice(4));
+      }
+    }
+  } else if (str === 'rub') {
+    for (const item of array) {
+      if (item.slice(0, 3) === 'rub') {
+        sum += Number(item.slice(4));
+      }
+    }
+  }
+
+  return sum;
+};
+
+export default getTotalAmount;
