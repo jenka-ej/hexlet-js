@@ -1,0 +1,25 @@
+const getSuperSeriesWinner = (array) => {
+  let canadarow = 0;
+  let ussrrow = 0;
+  let draw = 0;
+
+  for (const item of array) {
+    if (Number(item[0]) > Number(item[1])) {
+      canadarow += 1;
+    } else if (Number(item[0]) < Number(item[1])) {
+      ussrrow += 1;
+    } else {
+      draw += 1;
+    }
+  }
+
+  if (canadarow > ussrrow) {
+    return 'canada';
+  } else if (canadarow < ussrrow) {
+    return 'ussr';
+  } else {
+    return null;
+  }
+};
+
+export default getSuperSeriesWinner;
