@@ -1,0 +1,13 @@
+import _ from 'lodash';
+
+const countUniqChars = (str) => {
+  let result = 0;
+
+  for (const item of _.uniq(str)) {
+    result += 1;
+  }
+
+  return result;
+};
+
+export default countUniqChars;
