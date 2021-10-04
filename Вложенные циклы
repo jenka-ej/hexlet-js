@@ -2,7 +2,6 @@ import _ from 'lodash';
 
 const getSameCount = (array1, array2) => {
   const mass = [];
-  const mass1 = [];
   let result = 0;
 
   if (array1.length === 0 || array2.length === 0) {
@@ -17,11 +16,7 @@ const getSameCount = (array1, array2) => {
     mass.push(item);
   }
 
-  for (const item of _.uniq(mass)) {
-    mass1.push(item);
-  }
-
-  result = mass.length - mass1.length;
+  result = mass.length - _.uniq(mass).length;
 
   return result;
 };
