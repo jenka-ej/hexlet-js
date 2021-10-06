@@ -1,0 +1,22 @@
+const openingSymbols = ['(', '[', '{', '<'];
+const closingSymbols = [')', ']', '}', '>'];
+
+const isBracketStructureBalanced = (expression) => {
+  const stack = [];
+
+  for (const symbol of expression) {
+    const find = openingSymbols.indexOf(symbol);
+    const find1 = closingSymbols.indexOf(symbol);
+    if (find !== -1) {
+      stack.push(symbol);
+    } else if (find1 !== -1) {
+      if (openingSymbols.indexOf(stack.pop()) !== find1) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
+};
+
+export default isBracketStructureBalanced;
