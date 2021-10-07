@@ -1,0 +1,13 @@
+const getIntersectionOfSortedArrays = (array1, array2) => {
+  const mass = [];
+
+  for (const item of array1) {
+    if (array2.includes(item)) {
+      mass.push(item);
+    }
+  }
+
+  return mass.sort((a, b) => a - b);
+};
+
+export default getIntersectionOfSortedArrays;
