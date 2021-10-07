@@ -1,0 +1,28 @@
+const getDistance = ([x1, y1], [x2, y2]) => {
+  const xs = x2 - x1;
+  const ys = y2 - y1;
+
+  return Math.sqrt(xs ** 2 + ys ** 2);
+};
+
+export const getTheNearestLocation = (array1, array2) => {
+  const [x2, y2] = array2;
+  const mass = [];
+
+  if (array1.length === 0) {
+    return null;
+  }
+
+  for (const [, [x1, y1]] of array1) {
+    const result = getDistance([x1, y1], [x2, y2]);
+    mass.push(result);
+  }
+
+  if (mass[0] < mass[1] && mass[0] < mass[2]) {
+    return array1[0];
+  } else if (mass[1] < mass[0] && mass[1] < mass[2]) {
+    return array1[1];
+  } else {
+    return array1[2];
+  }
+};
