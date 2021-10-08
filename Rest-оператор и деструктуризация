@@ -1,0 +1,16 @@
+export const getMax = (array) => {
+  const [first, ...rest] = array;
+  let maxvalue = first;
+
+  if (array.length === 0) {
+    return null;
+  }
+
+  for (const item of rest) {
+    if (maxvalue < item) {
+      maxvalue = item;
+    }
+  }
+
+  return maxvalue;
+};
