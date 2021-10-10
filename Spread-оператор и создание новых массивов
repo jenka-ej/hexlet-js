@@ -1,0 +1,17 @@
+export const flatten = (array) => {
+  const mass = [];
+
+  for (const item of array) {
+    if (Array.isArray(item)) {
+      for (const element of item) {
+        mass.push(element);
+      }
+    } else if (item.length === 0) {
+      continue;
+    } else {
+      mass.push(item);
+    }
+  }
+
+  return mass;
+};
